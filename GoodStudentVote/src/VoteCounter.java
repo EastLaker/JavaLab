@@ -10,12 +10,12 @@
 * */
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Vector;
-import java.util.Map;
-import java.util.HashMap;
+import java.io.*;
+import java.util.*;
 
 public class VoteCounter extends JFrame implements ActionListener{
     public class WindowCloser extends WindowAdapter
@@ -26,48 +26,53 @@ public class VoteCounter extends JFrame implements ActionListener{
         }
     }
 
-    protected void makebutton(String name,
-                              GridBagLayout gridbag,
-                              GridBagConstraints c) {
-        JButton button = new JButton(name);
-        gridbag.setConstraints(button, c);
-        add(button);
-    }
 
     JPanel Rules=new JPanel();
     JPanel Buttons=new JPanel();
-    JPanel Table=new JPanel();
-    JLabel label0=new JLabel("Rules of Vote",JLabel.CENTER);
-    JTextArea rules=new JTextArea(5,50);
+    //JPanel Table=new JPanel();
+    JLabel label0=new JLabel("投票规则",JLabel.CENTER);
+    JTextArea rules=new JTextArea(2,50);
     //List candidate=new List(10,false);
-    JButton vote=new JButton("vote");
+    JButton vote=new JButton("投票");
 
-    Map<String,Integer> candidate=new HashMap<>();
+    JScrollPane Table = new JScrollPane();
+    Vector Vcolumns =new Vector();
+    Vector<Vector> VData =new Vector();
+    DefaultTableModel model = new DefaultTableModel();
     JTable table;
 
-    public VoteCounter(){
-        setFont(new Font("SansSerif", Font.PLAIN, 16));
-        GridBagConstraints c=new GridBagConstraints();
-        GridBagLayout gridBagLayout=new GridBagLayout();
+    Menu File=new Menu("File");MenuBar bar=new MenuBar();
+    private MenuItem Open=new MenuItem("Open");
+    private MenuItem Save=new MenuItem("Save");
 
+    public VoteCounter(){
+        setFont(new Font("SansSerif", Font.PLAIN, 18));
+        setMenuBar(bar);
         setLayout(new BorderLayout());
         add(Rules,"North");
         Rules.setLayout(new BorderLayout());
         add(Table,"Center");
-        Table.setLayout(new GridBagLayout());
         add(Buttons,"South");
 
+        bar.add(File);
+        File.add(Open);Open.addActionListener(this);
+        File.add(Save);Save.addActionListener(this);
 
-        TableModel tableModel;
         Rules.add(label0,"North");
         rules.setText("每个人给三个候选人投票....etc");
         rules.setEditable(false);
         Rules.add(rules,"Center");
-        //Table.add(candidate);
+
+        Vcolumns.add("姓名");Vcolumns.add("票数");
+        model.setDataVector(VData,Vcolumns);
+        table= new JTable(model){
+            public boolean isCellEditable(int row, int column) { return false;}//表格不允许被编辑
+        };
+        Table.add(table);
         Buttons.add(vote);vote.addActionListener(this);
-        for(int i=0;i<20;i++) {
-            candidate.put("xiao ming",0);
-        }
+        /*for(int i=0;i<20;i++) {
+            candidate.put(getRandomString(10,"Name"),0);
+        }*/
         addWindowListener(new WindowCloser());
         pack();
         setSize(this.getPreferredSize());
@@ -79,9 +84,57 @@ public class VoteCounter extends JFrame implements ActionListener{
         if(e.getSource()==vote){
             VoteForm voteForm=new VoteForm(this);
         }
+        else if(e.getSource()==Open){
+            try{
+                FileDialog fd=new FileDialog(this,"Open",FileDialog.LOAD);
+                fd.setVisible(true);
+                //fd.setDirectory(".");
+
+                ObjectInputStream tableIn=new ObjectInputStream(new FileInputStream(fd.getDirectory()+fd.getFile()));
+                fd.dispose();
+                VData=(Vector<Vector>)tableIn.readObject();
+                tableIn.close();
+                model.setDataVector(VData,Vcolumns);
+            }
+            catch (IOException ioe){
+                System.out.println(ioe);
+            }
+            catch (ClassNotFoundException cnfe){
+                System.out.println(cnfe);
+            }
+        }
+        else if(e.getSource()==Save) {
+            try {
+                FileDialog fd = new FileDialog(this, "Open", FileDialog.SAVE);
+                fd.setFile(".dat");
+                fd.setVisible(true);
+                ObjectOutputStream tableOut = new ObjectOutputStream(new FileOutputStream(fd.getDirectory() + fd.getFile()));
+                tableOut.writeObject(VData);
+                fd.dispose();
+                tableOut.close();
+            } catch (IOException ioe) {
+                System.out.println(ioe);
+            }
+        }
     }
     public static void main(String args[])
     {
         VoteCounter counter0=new VoteCounter();
+    }
+
+
+    //length用户要求产生字符串的长度
+    public static String getRandomString(int length,String type){
+        String str;
+        int bound;
+        if(!type.contentEquals("phone")){str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";bound=52;}
+        else {str="0123456789";bound=10;}
+        Random random=new Random();
+        StringBuffer sb=new StringBuffer();
+        for(int i=0;i<length;i++){
+            int number=random.nextInt(bound);
+            sb.append(str.charAt(number));
+        }
+        return sb.toString();
     }
 }

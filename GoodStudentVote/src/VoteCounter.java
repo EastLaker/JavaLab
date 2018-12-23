@@ -9,10 +9,15 @@
 *
 * */
 
+import javax.swing.*;
+import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Vector;
+import java.util.Map;
+import java.util.HashMap;
 
-public class VoteCounter extends Frame implements ActionListener{
+public class VoteCounter extends JFrame implements ActionListener{
     public class WindowCloser extends WindowAdapter
     {
         public void windowClosing(WindowEvent we)
@@ -20,15 +25,31 @@ public class VoteCounter extends Frame implements ActionListener{
             System.exit(0);
         }
     }
-    Panel Rules=new Panel();
-    Panel Buttons=new Panel();
-    Panel Table=new Panel();
-    Label label0=new Label("Rules of Vote",Label.CENTER);
-    TextArea rules=new TextArea(5,50);
-    List candidate=new List();
-    Button vote=new Button("vote");
+
+    protected void makebutton(String name,
+                              GridBagLayout gridbag,
+                              GridBagConstraints c) {
+        JButton button = new JButton(name);
+        gridbag.setConstraints(button, c);
+        add(button);
+    }
+
+    JPanel Rules=new JPanel();
+    JPanel Buttons=new JPanel();
+    JPanel Table=new JPanel();
+    JLabel label0=new JLabel("Rules of Vote",JLabel.CENTER);
+    JTextArea rules=new JTextArea(5,50);
+    //List candidate=new List(10,false);
+    JButton vote=new JButton("vote");
+
+    Map<String,Integer> candidate=new HashMap<>();
+    JTable table;
 
     public VoteCounter(){
+        setFont(new Font("SansSerif", Font.PLAIN, 16));
+        GridBagConstraints c=new GridBagConstraints();
+        GridBagLayout gridBagLayout=new GridBagLayout();
+
         setLayout(new BorderLayout());
         add(Rules,"North");
         Rules.setLayout(new BorderLayout());
@@ -37,22 +58,26 @@ public class VoteCounter extends Frame implements ActionListener{
         add(Buttons,"South");
 
 
+        TableModel tableModel;
         Rules.add(label0,"North");
         rules.setText("每个人给三个候选人投票....etc");
         rules.setEditable(false);
         Rules.add(rules,"Center");
-        Table.add(candidate);
+        //Table.add(candidate);
         Buttons.add(vote);vote.addActionListener(this);
-
+        for(int i=0;i<20;i++) {
+            candidate.put("xiao ming",0);
+        }
         addWindowListener(new WindowCloser());
         pack();
+        setSize(this.getPreferredSize());
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e)
     {
         if(e.getSource()==vote){
-            VoteForm voteForm=new VoteForm();
+            VoteForm voteForm=new VoteForm(this);
         }
     }
     public static void main(String args[])

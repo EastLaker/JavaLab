@@ -38,6 +38,7 @@ public class VoteCounter extends JFrame implements ActionListener{
     JScrollPane Table = new JScrollPane();
     Vector Vcolumns =new Vector();
     Vector<Vector> VData =new Vector();
+    Map<String ,Integer> canadite=new HashMap<>();
     DefaultTableModel model = new DefaultTableModel();
     JTable table;
 
@@ -63,12 +64,21 @@ public class VoteCounter extends JFrame implements ActionListener{
         rules.setEditable(false);
         Rules.add(rules,"Center");
 
+        canadite.put("xiaoming",0);
+        canadite.put("Jack Ma",10);
+        for(String key:canadite.keySet()){
+            Vector data=new Vector();
+            data.add(key);data.add(canadite.get(key));
+            VData.add(data);
+        }
+
+
         Vcolumns.add("姓名");Vcolumns.add("票数");
         model.setDataVector(VData,Vcolumns);
         table= new JTable(model){
             public boolean isCellEditable(int row, int column) { return false;}//表格不允许被编辑
         };
-        Table.add(table);
+        Table.setViewportView(table);
         Buttons.add(vote);vote.addActionListener(this);
         /*for(int i=0;i<20;i++) {
             candidate.put(getRandomString(10,"Name"),0);
@@ -77,6 +87,10 @@ public class VoteCounter extends JFrame implements ActionListener{
         pack();
         setSize(this.getPreferredSize());
         setVisible(true);
+
+
+
+
     }
 
     public void actionPerformed(ActionEvent e)

@@ -31,7 +31,7 @@ public class VoteForm extends JFrame implements ActionListener {
         add(CheckBoxes,"Center");
         add(Buttons,"South");
 
-        //comboBox1.addItem();
+        //comboBox1.addItem(Father.VData);
         CheckBoxes.add(label1);
         CheckBoxes.add(comboBox1);
         CheckBoxes.add(label2);

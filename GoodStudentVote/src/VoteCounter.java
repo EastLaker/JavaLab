@@ -38,7 +38,7 @@ public class VoteCounter extends JFrame implements ActionListener{
     JScrollPane Table = new JScrollPane();
     Vector Vcolumns =new Vector();
     Vector<Vector> VData =new Vector();
-    Map<String ,Integer> canadite=new HashMap<>();
+    Map<String ,Integer> candidate=new HashMap<>();
     DefaultTableModel model = new DefaultTableModel();
     JTable table;
 
@@ -64,11 +64,11 @@ public class VoteCounter extends JFrame implements ActionListener{
         rules.setEditable(false);
         Rules.add(rules,"Center");
 
-        canadite.put("xiaoming",0);
-        canadite.put("Jack Ma",10);
-        for(String key:canadite.keySet()){
+        candidate.put("xiaoming",0);
+        candidate.put("Jack Ma",10);
+        for(String key:candidate.keySet()){
             Vector data=new Vector();
-            data.add(key);data.add(canadite.get(key));
+            data.add(key);data.add(candidate.get(key));
             VData.add(data);
         }
 

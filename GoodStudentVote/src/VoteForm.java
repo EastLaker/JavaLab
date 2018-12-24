@@ -31,7 +31,13 @@ public class VoteForm extends JFrame implements ActionListener {
         add(CheckBoxes,"Center");
         add(Buttons,"South");
 
-        //comboBox1.addItem(Father.VData);
+        for(int i=0;i<Father.VData.size();i++)
+        {
+            comboBox1.addItem(Father.VData.get(i));
+            comboBox2.addItem(Father.VData.get(i));
+            comboBox3.addItem(Father.VData.get(i));
+        }
+
         CheckBoxes.add(label1);
         CheckBoxes.add(comboBox1);
         CheckBoxes.add(label2);
@@ -52,7 +58,7 @@ public class VoteForm extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e)
     {
         if(e.getSource()==Confirm){
-
+            
             this.dispose();
         }
         else if(e.getSource()==Exit){

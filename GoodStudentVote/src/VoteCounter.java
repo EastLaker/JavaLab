@@ -21,25 +21,28 @@ public class VoteCounter extends JFrame implements ActionListener{
 
     JPanel Rules=new JPanel();
     JPanel Buttons=new JPanel();
-
+    int SpoiltVote;
     JLabel label0=new JLabel("投票规则",JLabel.CENTER);
     JTextArea rules=new JTextArea(2,50);
     JButton AddCandidate=new JButton("新建候选人");
     JButton vote=new JButton("投票");
     JButton DeleteCandidate=new JButton("删除候选人");
+    JLabel invalidvotes=new JLabel("废票："+SpoiltVote);
 
     JScrollPane Table = new JScrollPane();
     Vector Vcolumns =new Vector();
     Vector<Vector> VData =new Vector();
-    //Map<String ,Integer> candidate=new HashMap<>();
+
     DefaultTableModel model = new DefaultTableModel();
     JTable table;
+    Login parent;
 
     Menu File=new Menu("File");MenuBar bar=new MenuBar();
     private MenuItem Open=new MenuItem("Open");
     private MenuItem Save=new MenuItem("Save");
 
     public VoteCounter(Login parent,boolean admin){
+        this.parent=parent;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setFont(new Font("SansSerif", Font.PLAIN, 18));
         setMenuBar(bar);
@@ -60,7 +63,7 @@ public class VoteCounter extends JFrame implements ActionListener{
 
 
         this.VData=parent.VData;
-
+        this.SpoiltVote=parent.SpoiltVote;
 
         Vcolumns.add("姓名");Vcolumns.add("票数");
         model.setDataVector(VData,Vcolumns);
@@ -71,10 +74,8 @@ public class VoteCounter extends JFrame implements ActionListener{
         Buttons.add(AddCandidate);AddCandidate.addActionListener(this);
         Buttons.add(vote);vote.addActionListener(this);
         Buttons.add(DeleteCandidate);DeleteCandidate.addActionListener(this);
-        /*for(int i=0;i<20;i++) {
-            candidate.put(getRandomString(10,"Name"),0);
-        }*/
-        //addWindowListener(new WindowCloser());
+        Buttons.add(invalidvotes);
+
         pack();
         setSize(this.getPreferredSize());
         setVisible(true);
@@ -99,7 +100,9 @@ public class VoteCounter extends JFrame implements ActionListener{
 
                 ObjectInputStream tableIn=new ObjectInputStream(new FileInputStream(fd.getDirectory()+fd.getFile()));
                 fd.dispose();
-                VData=(Vector<Vector>)tableIn.readObject();
+                parent=(Login)tableIn.readObject();
+                VData=parent.VData;
+                SpoiltVote=parent.SpoiltVote;
                 tableIn.close();
                 model.setDataVector(VData,Vcolumns);
             }
@@ -116,7 +119,7 @@ public class VoteCounter extends JFrame implements ActionListener{
                 fd.setFile(".dat");
                 fd.setVisible(true);
                 ObjectOutputStream tableOut = new ObjectOutputStream(new FileOutputStream(fd.getDirectory() + fd.getFile()));
-                tableOut.writeObject(VData);
+                tableOut.writeObject(parent);
                 fd.dispose();
                 tableOut.close();
             } catch (IOException ioe) {

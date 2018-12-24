@@ -59,6 +59,8 @@ public class VoteForm extends JFrame implements ActionListener {
             if(index1==index2&&index1==index3&&index2==index3)
             {
                 JOptionPane.showMessageDialog(this,"一个候选人仅能投一票，否则作为废票!");
+                father.SpoiltVote+=1;
+                father.invalidvotes.setText("废票："+father.SpoiltVote);
                 this.dispose();
                 return;
             }

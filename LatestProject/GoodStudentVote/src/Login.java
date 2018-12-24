@@ -3,6 +3,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 
 import javax.swing.*;
@@ -12,7 +14,10 @@ import javax.swing.*;
 //退出
 public class Login extends JFrame implements ActionListener, Serializable {
     Vector<Vector> VData =new Vector();
+    Map<String ,Integer> candidate=new HashMap<>();
     int SpoiltVote=0;
+    int SuccessVote=0;
+    int abstentionvote=0;
     JButton loginAsAdmin=new JButton("以管理员身份登陆");
     JButton loginAsUser=new JButton("以用户身份登陆");
     JButton exit=new JButton("退出");
@@ -31,11 +36,15 @@ public class Login extends JFrame implements ActionListener, Serializable {
         add(exit);
         setVisible(true);
         pack();
-
-        //Vector temp = new Vector();
-        //temp.add("Jack Ma");
-        //temp.add(0);
-        //VData.add(temp);
+        candidate.put("xiaoming",0);
+        candidate.put("Jack Ma",0);
+        candidate.put("Pony Ma",0);
+        candidate.put("wanghong",0);
+        for(String key:candidate.keySet()){
+            Vector data=new Vector();
+            data.add(key);data.add(candidate.get(key));
+            VData.add(data);
+        }
     }
 
     //事件处理

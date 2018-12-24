@@ -16,26 +16,32 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.util.*;
+import java.util.List;
+import java.util.Map.Entry;
 
 public class VoteCounter extends JFrame implements ActionListener{
 
     JPanel Rules=new JPanel();
     JPanel Buttons=new JPanel();
     int SpoiltVote;
+    int SuccessVote;
+    Login parent;
     JLabel label0=new JLabel("投票规则",JLabel.CENTER);
     JTextArea rules=new JTextArea(2,50);
     JButton AddCandidate=new JButton("新建候选人");
     JButton vote=new JButton("投票");
     JButton DeleteCandidate=new JButton("删除候选人");
-    JLabel invalidvotes=new JLabel("废票："+SpoiltVote);
-
+    JLabel invalidvotes;
+    JLabel validvotes;
+    JLabel abstentionvotes;
     JScrollPane Table = new JScrollPane();
     Vector Vcolumns =new Vector();
     Vector<Vector> VData =new Vector();
 
+    Map<String ,Integer> candidate=new HashMap<>();
     DefaultTableModel model = new DefaultTableModel();
     JTable table;
-    Login parent;
+
 
     Menu File=new Menu("File");MenuBar bar=new MenuBar();
     private MenuItem Open=new MenuItem("Open");
@@ -61,9 +67,14 @@ public class VoteCounter extends JFrame implements ActionListener{
         rules.setEditable(false);
         Rules.add(rules,"Center");
 
-
+        this.candidate=parent.candidate;
         this.VData=parent.VData;
+        
         this.SpoiltVote=parent.SpoiltVote;
+        this.SuccessVote=parent.SuccessVote;
+        invalidvotes=new JLabel("废票："+SpoiltVote);
+        validvotes=new JLabel("有效票："+SuccessVote);
+        abstentionvotes=new JLabel("弃权票："+parent.abstentionvote);
 
         Vcolumns.add("姓名");Vcolumns.add("票数");
         model.setDataVector(VData,Vcolumns);
@@ -71,10 +82,11 @@ public class VoteCounter extends JFrame implements ActionListener{
             public boolean isCellEditable(int row, int column) { return false;}//表格不允许被编辑
         };
         Table.setViewportView(table);
+        Buttons.add(validvotes);
         Buttons.add(AddCandidate);AddCandidate.addActionListener(this);
         Buttons.add(vote);vote.addActionListener(this);
         Buttons.add(DeleteCandidate);DeleteCandidate.addActionListener(this);
-        Buttons.add(invalidvotes);
+        Buttons.add(invalidvotes);Buttons.add(abstentionvotes);
 
         pack();
         setSize(this.getPreferredSize());
@@ -86,7 +98,34 @@ public class VoteCounter extends JFrame implements ActionListener{
             vote.setVisible(true);
         }
     }
+    public void Sort() {
+		candidate=sortMapByValue(candidate);
+		VData.removeAllElements();
+		for(String key:candidate.keySet()){
+            Vector data=new Vector();
+            data.add(key);data.add(candidate.get(key));
+            VData.add(data);
+        }
+		model.setDataVector(VData,Vcolumns);
+	}
+    public static Map<String, Integer> sortMapByValue(Map<String, Integer> oriMap) {
+        if (oriMap == null || oriMap.isEmpty()) {
+            return null;
+        }
+        Map<String, Integer> sortedMap = new LinkedHashMap<String, Integer>();
+        List<Map.Entry<String, Integer>> entryList = 
+        		new ArrayList<Map.Entry<String, Integer>>(oriMap.entrySet());
+        //将map转换成list
+        Collections.sort(entryList, new MapValueComparator());
 
+        Iterator<Map.Entry<String, Integer>> iter = entryList.iterator();
+        Map.Entry<String, Integer> tmpEntry = null;
+        while (iter.hasNext()) {
+            tmpEntry = iter.next();
+            sortedMap.put(tmpEntry.getKey(), tmpEntry.getValue());
+        }
+        return sortedMap;
+    }
     public void actionPerformed(ActionEvent e)
     {
         if(e.getSource()==vote){
@@ -133,17 +172,27 @@ public class VoteCounter extends JFrame implements ActionListener{
             if(name==""||name==null)
                 return;
 
-            Vector temp=new Vector();
-            temp.add(name);temp.add(0);
-            VData.add(temp);
-            model.setDataVector(VData,Vcolumns);
+            //Vector temp=new Vector();
+            //temp.add(name);temp.add(0);
+            //VData.add(temp);
+            candidate.put(name, 0);
+            parent.candidate.put(name,0);
+            Sort();
         }
         else if(e.getSource()==DeleteCandidate){
             int row=table.getSelectedRow();
-            VData.remove(row);
-            model.setDataVector(VData,Vcolumns);
+            candidate.remove(row);
+
+            Sort();
         }
     }
 
+
+}
+class MapValueComparator implements Comparator<Map.Entry<String, Integer>> {
+    public int compare(Entry<String, Integer> me1, Entry<String, Integer> me2) {
+
+        return -me1.getValue().compareTo(me2.getValue());
+    }
 }
 

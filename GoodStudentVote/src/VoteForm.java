@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Vector;
 
 
 public class VoteForm extends JFrame implements ActionListener {
@@ -25,7 +26,9 @@ public class VoteForm extends JFrame implements ActionListener {
     JComboBox comboBox3=new JComboBox();
     JTextPane IDPane=new JTextPane();
 
+    VoteCounter father;
     public VoteForm(VoteCounter Father){
+        father=Father;
         setLayout(new BorderLayout());
         CheckBoxes.setLayout(new GridLayout(4,2));
         add(CheckBoxes,"Center");
@@ -58,7 +61,12 @@ public class VoteForm extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e)
     {
         if(e.getSource()==Confirm){
-            
+            int index=comboBox1.getSelectedIndex();
+            //Vector temp=father.VData.get(index);
+            int temp=(int)father.VData.get(index).get(1);
+            father.VData.elementAt(index).remove(1);father.VData.elementAt(index).add(temp+1);
+
+            father.model.setDataVector(father.VData,father.Vcolumns);
             this.dispose();
         }
         else if(e.getSource()==Exit){

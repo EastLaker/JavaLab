@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="147f02b5-a04a-4d82-b35c-76f04fb10a36" name="Default Changelist" comment="add buttons">
-      <change beforePath="$PROJECT_DIR$/GoodStudentVote/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/GoodStudentVote/src/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/candidatelist.dat" beforeDir="false" afterPath="$PROJECT_DIR$/candidatelist.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/~$va实验报告.doc" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="105" column="50" lean-forward="true" selection-start-line="105" selection-start-column="50" selection-end-line="105" selection-end-column="50" />
+              <caret line="105" column="50" selection-start-line="105" selection-start-column="50" selection-end-line="105" selection-end-column="50" />
               <folding>
                 <element signature="e#0#4796#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -88,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="565">
-              <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -169,7 +166,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545640798000" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545641380252" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/GoodStudentVote" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -349,7 +346,7 @@
     <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="565">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -373,7 +370,7 @@
     <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="105" column="50" lean-forward="true" selection-start-line="105" selection-start-column="50" selection-end-line="105" selection-end-column="50" />
+          <caret line="105" column="50" selection-start-line="105" selection-start-column="50" selection-end-line="105" selection-end-column="50" />
           <folding>
             <element signature="e#0#4796#0" expanded="true" />
             <element signature="imports" expanded="true" />

@@ -181,7 +181,8 @@ public class VoteCounter extends JFrame implements ActionListener{
         }
         else if(e.getSource()==DeleteCandidate){
             int row=table.getSelectedRow();
-            candidate.remove(row);
+            String temp=(String) VData.get(row).get(0);
+            candidate.remove(temp);
 
             Sort();
         }

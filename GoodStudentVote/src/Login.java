@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,6 +13,7 @@ import javax.swing.JFrame;
 //三个按钮，以管理员身份登陆和用户登陆
 //退出
 public class Login extends JFrame implements ActionListener{
+    Vector<Vector> VData =new Vector();
     JButton loginAsAdmin=new JButton("以管理员身份登陆");
     JButton loginAsUser=new JButton("以用户身份登陆");
     JButton exit=new JButton("退出");
@@ -20,7 +22,7 @@ public class Login extends JFrame implements ActionListener{
         setUp();
     }
     public void setUp() {
-        setLayout(new GridLayout(3,1));
+        setLayout(new GridLayout(3, 1));
         loginAsAdmin.addActionListener(this);
         loginAsUser.addActionListener(this);
         exit.addActionListener(this);
@@ -29,12 +31,17 @@ public class Login extends JFrame implements ActionListener{
         add(exit);
         setVisible(true);
         pack();
+
+        Vector temp=new Vector();
+        temp.add("Jack Ma");temp.add(0);
+        VData.add(temp);
     }
     //关闭窗口
     public class WindowCloser extends WindowAdapter
     {
         public void windowClosing(WindowEvent we)
         {
+
             System.exit(0);
         }
     }
@@ -52,7 +59,7 @@ public class Login extends JFrame implements ActionListener{
         //用户
         else if (e.getSource()==loginAsUser)
         {
-            //VoteForm voteForm=new VoteForm(this);
+            VoteCounter voteForm=new VoteCounter(this,false);
         }
     }
     public static void main(String args[])

@@ -18,21 +18,12 @@ import java.io.*;
 import java.util.*;
 
 public class VoteCounter extends JFrame implements ActionListener{
-    public class WindowCloser extends WindowAdapter
-    {
-        public void windowClosing(WindowEvent we)
-        {
-            System.exit(0);
-        }
-    }
-
 
     JPanel Rules=new JPanel();
     JPanel Buttons=new JPanel();
-    //JPanel Table=new JPanel();
+
     JLabel label0=new JLabel("投票规则",JLabel.CENTER);
     JTextArea rules=new JTextArea(2,50);
-    //List candidate=new List(10,false);
     JButton AddCandidate=new JButton("新建候选人");
     JButton vote=new JButton("投票");
     JButton DeleteCandidate=new JButton("删除候选人");
@@ -40,7 +31,7 @@ public class VoteCounter extends JFrame implements ActionListener{
     JScrollPane Table = new JScrollPane();
     Vector Vcolumns =new Vector();
     Vector<Vector> VData =new Vector();
-    Map<String ,Integer> candidate=new HashMap<>();
+    //Map<String ,Integer> candidate=new HashMap<>();
     DefaultTableModel model = new DefaultTableModel();
     JTable table;
 
@@ -48,7 +39,8 @@ public class VoteCounter extends JFrame implements ActionListener{
     private MenuItem Open=new MenuItem("Open");
     private MenuItem Save=new MenuItem("Save");
 
-    public VoteCounter(JFrame parent,boolean admin){
+    public VoteCounter(Login parent,boolean admin){
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setFont(new Font("SansSerif", Font.PLAIN, 18));
         setMenuBar(bar);
         setLayout(new BorderLayout());
@@ -66,13 +58,8 @@ public class VoteCounter extends JFrame implements ActionListener{
         rules.setEditable(false);
         Rules.add(rules,"Center");
 
-        candidate.put("xiaoming",0);
-        candidate.put("Jack Ma",10);
-        for(String key:candidate.keySet()){
-            Vector data=new Vector();
-            data.add(key);data.add(candidate.get(key));
-            VData.add(data);
-        }
+
+        this.VData=parent.VData;
 
 
         Vcolumns.add("姓名");Vcolumns.add("票数");
@@ -83,16 +70,19 @@ public class VoteCounter extends JFrame implements ActionListener{
         Table.setViewportView(table);
         Buttons.add(AddCandidate);AddCandidate.addActionListener(this);
         Buttons.add(vote);vote.addActionListener(this);
-        Buttons.add(DeleteCandidate);
+        Buttons.add(DeleteCandidate);DeleteCandidate.addActionListener(this);
         /*for(int i=0;i<20;i++) {
             candidate.put(getRandomString(10,"Name"),0);
         }*/
-        addWindowListener(new WindowCloser());
+        //addWindowListener(new WindowCloser());
         pack();
         setSize(this.getPreferredSize());
         setVisible(true);
+        vote.setVisible(false);
         if(!admin){
-
+            AddCandidate.setVisible(false);
+            DeleteCandidate.setVisible(false);
+            vote.setVisible(true);
         }
     }
 
@@ -135,13 +125,18 @@ public class VoteCounter extends JFrame implements ActionListener{
         }
         else if(e.getSource()==AddCandidate){
             String name=JOptionPane.showInputDialog("请输入候选人姓名：");
+            if(name==""||name==null)
+                return;
+
             Vector temp=new Vector();
             temp.add(name);temp.add(0);
             VData.add(temp);
             model.setDataVector(VData,Vcolumns);
         }
         else if(e.getSource()==DeleteCandidate){
-            
+            int row=table.getSelectedRow();
+            VData.remove(row);
+            model.setDataVector(VData,Vcolumns);
         }
     }
 

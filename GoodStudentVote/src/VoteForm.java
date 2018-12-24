@@ -5,13 +5,6 @@ import java.util.Vector;
 
 
 public class VoteForm extends JFrame implements ActionListener {
-    public class WindowCloser extends WindowAdapter
-    {
-        public void windowClosing(WindowEvent we)
-        {
-            System.exit(0);
-        }
-    }
 
     JPanel CheckBoxes=new JPanel();
     JPanel Buttons=new JPanel();
@@ -28,6 +21,7 @@ public class VoteForm extends JFrame implements ActionListener {
 
     VoteCounter father;
     public VoteForm(VoteCounter Father){
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         father=Father;
         setLayout(new BorderLayout());
         CheckBoxes.setLayout(new GridLayout(4,2));
@@ -53,7 +47,6 @@ public class VoteForm extends JFrame implements ActionListener {
         Buttons.add(Confirm);Confirm.addActionListener(this);
         Buttons.add(Exit);
         Exit.addActionListener(this);
-        addWindowListener(new WindowCloser());
         pack();
         setSize(400,150);
         setVisible(true);
@@ -63,12 +56,19 @@ public class VoteForm extends JFrame implements ActionListener {
     {
         if(e.getSource()==Confirm){
             int index1=comboBox1.getSelectedIndex();int index2=comboBox2.getSelectedIndex();int index3=comboBox3.getSelectedIndex();
+            if(index1==index2&&index1==index3&&index2==index3)
+            {
+                JOptionPane.showMessageDialog(this,"一个候选人仅能投一票，否则作为废票!");
+                this.dispose();
+                return;
+            }
             int temp1=(int)father.VData.get(index1).get(1);
             father.VData.elementAt(index1).remove(1);father.VData.elementAt(index1).add(temp1+1);
             int temp2=(int)father.VData.get(index2).get(1);
             father.VData.elementAt(index2).remove(1);father.VData.elementAt(index2).add(temp2+1);
             int temp3=(int)father.VData.get(index3).get(1);
             father.VData.elementAt(index3).remove(1);father.VData.elementAt(index3).add(temp3+1);
+
 
             father.model.setDataVector(father.VData,father.Vcolumns);
             this.dispose();
@@ -77,5 +77,7 @@ public class VoteForm extends JFrame implements ActionListener {
             this.dispose();
         }
     }
+
+
 
 }

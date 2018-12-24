@@ -48,7 +48,7 @@ public class VoteCounter extends JFrame implements ActionListener{
     private MenuItem Open=new MenuItem("Open");
     private MenuItem Save=new MenuItem("Save");
 
-    public VoteCounter(){
+    public VoteCounter(JFrame parent,boolean admin){
         setFont(new Font("SansSerif", Font.PLAIN, 18));
         setMenuBar(bar);
         setLayout(new BorderLayout());
@@ -91,7 +91,9 @@ public class VoteCounter extends JFrame implements ActionListener{
         pack();
         setSize(this.getPreferredSize());
         setVisible(true);
+        if(!admin){
 
+        }
     }
 
     public void actionPerformed(ActionEvent e)
@@ -142,11 +144,6 @@ public class VoteCounter extends JFrame implements ActionListener{
             
         }
     }
-    public static void main(String args[])
-    {
-        VoteCounter counter0=new VoteCounter();
-    }
-
 
     //length用户要求产生字符串的长度
     public static String getRandomString(int length,String type){

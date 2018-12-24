@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" line="68" />
+    <bookmark url="file://$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" line="69" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="147f02b5-a04a-4d82-b35c-76f04fb10a36" name="Default Changelist" comment="add buttons">
+      <change afterPath="$PROJECT_DIR$/GoodStudentVote/src/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoodStudentVote/VoteCounter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoodStudentVote/VoteCounter$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoodStudentVote/VoteCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoodStudentVote/VoteCounter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoodStudentVote/VoteForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoodStudentVote/VoteForm.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,23 +34,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="5" />
+          <entry key="java" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="5" />
+          <entry key="JAVA" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1747" />
+          <entry key="java" value="1883" />
           <entry key="txt" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1747" />
+          <entry key="JAVA" value="1883" />
           <entry key="PLAIN_TEXT" value="24" />
         </counts>
       </usages-collector>
@@ -56,13 +61,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="138" column="46" selection-start-line="138" selection-start-column="46" selection-end-line="138" selection-end-column="46" />
+            <state relative-caret-position="239">
+              <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
               <folding>
                 <element signature="e#0#4796#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#4468#4469#0" expanded="true" />
-                <element signature="e#4522#4523#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/Login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-247">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#507#508#0" expanded="true" />
+                <element signature="e#530#531#0" expanded="true" />
+                <element signature="e#974#975#0" expanded="true" />
+                <element signature="e#1012#1013#0" expanded="true" />
+                <element signature="e#1485#1486#0" expanded="true" />
+                <element signature="e#1524#1525#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="68" column="59" selection-start-line="68" selection-start-column="59" selection-end-line="68" selection-end-column="59" />
+            <state relative-caret-position="630">
+              <caret line="50" column="31" lean-forward="true" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,6 +123,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/GridBagEx1.java" />
         <option value="$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" />
+        <option value="$PROJECT_DIR$/GoodStudentVote/src/Login.java" />
         <option value="$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java" />
       </list>
     </option>
@@ -130,6 +152,17 @@
               <item name="VoteManager" type="b2602c69:ProjectViewProjectNode" />
               <item name="VoteManager" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="VoteManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VoteManager" type="462c0819:PsiDirectoryNode" />
+              <item name="GoodStudentVote" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VoteManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VoteManager" type="462c0819:PsiDirectoryNode" />
+              <item name="GoodStudentVote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -141,7 +174,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545621480531" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545623882553" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/GoodStudentVote" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -161,10 +194,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.VoteCounter">
+  <component name="RunManager" selected="Application.Login">
     <configuration name="GridBagEx1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GridBagEx1" />
       <module name="VoteManager" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Login" />
+      <module name="GoodStudentVote" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -179,9 +219,11 @@
     <list>
       <item itemvalue="Application.VoteCounter" />
       <item itemvalue="Application.GridBagEx1" />
+      <item itemvalue="Application.Login" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Login" />
         <item itemvalue="Application.VoteCounter" />
         <item itemvalue="Application.GridBagEx1" />
       </list>
@@ -206,18 +248,18 @@
       <workItem from="1545555181841" duration="1165000" />
       <workItem from="1545571302235" duration="3936000" />
       <workItem from="1545581289605" duration="600000" />
-      <workItem from="1545611274362" duration="7346000" />
+      <workItem from="1545611274362" duration="10294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29016000" />
+    <option name="totallyTimeSpent" value="31964000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1488" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1944056" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1944056" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -226,7 +268,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4958042" visible="true" weight="0.32454923" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4958042" visible="true" weight="0.32454923" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993007" weight="0.3994452" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -309,10 +351,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GridBagEx1.java" />
+    <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-247">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#974#975#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1485#1486#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="68" column="59" selection-start-line="68" selection-start-column="59" selection-end-line="68" selection-end-column="59" />
+        <state relative-caret-position="630">
+          <caret line="50" column="31" lean-forward="true" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -321,13 +379,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="138" column="46" selection-start-line="138" selection-start-column="46" selection-end-line="138" selection-end-column="46" />
+        <state relative-caret-position="239">
+          <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
           <folding>
             <element signature="e#0#4796#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#4468#4469#0" expanded="true" />
-            <element signature="e#4522#4523#0" expanded="true" />
           </folding>
         </state>
       </provider>

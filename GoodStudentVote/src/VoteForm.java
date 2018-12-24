@@ -52,6 +52,7 @@ public class VoteForm extends JFrame implements ActionListener {
 
         Buttons.add(Confirm);Confirm.addActionListener(this);
         Buttons.add(Exit);
+        Exit.addActionListener(this);
         addWindowListener(new WindowCloser());
         pack();
         setSize(400,150);

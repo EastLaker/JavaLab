@@ -1,14 +1,11 @@
-import java.awt.Button;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.Serializable;
 import java.util.Vector;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 //用户登陆界面
 //三个按钮，以管理员身份登陆和用户登陆
@@ -24,6 +21,7 @@ public class Login extends JFrame implements ActionListener, Serializable {
         setUp();
     }
     public void setUp() {
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLayout(new GridLayout(3, 1));
         loginAsAdmin.addActionListener(this);
         loginAsUser.addActionListener(this);
@@ -34,18 +32,10 @@ public class Login extends JFrame implements ActionListener, Serializable {
         setVisible(true);
         pack();
 
-        Vector temp=new Vector();
-        temp.add("Jack Ma");temp.add(0);
+        Vector temp = new Vector();
+        temp.add("Jack Ma");
+        temp.add(0);
         VData.add(temp);
-    }
-    //关闭窗口
-    public class WindowCloser extends WindowAdapter
-    {
-        public void windowClosing(WindowEvent we)
-        {
-
-            System.exit(0);
-        }
     }
 
     //事件处理

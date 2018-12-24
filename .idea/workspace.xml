@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" line="66" />
+    <bookmark url="file://$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" line="68" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="147f02b5-a04a-4d82-b35c-76f04fb10a36" name="Default Changelist" comment="add buttons">
+      <change beforePath="$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,13 +39,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1510" />
+          <entry key="java" value="1747" />
           <entry key="txt" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1510" />
+          <entry key="JAVA" value="1747" />
           <entry key="PLAIN_TEXT" value="24" />
         </counts>
       </usages-collector>
@@ -52,24 +53,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+            <state relative-caret-position="221">
+              <caret line="138" column="46" selection-start-line="138" selection-start-column="46" selection-end-line="138" selection-end-column="46" />
               <folding>
                 <element signature="e#0#4796#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#4468#4469#0" expanded="true" />
+                <element signature="e#4522#4523#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="66" column="94" selection-start-line="66" selection-start-column="94" selection-end-line="66" selection-end-column="94" />
+            <state relative-caret-position="275">
+              <caret line="68" column="59" selection-start-line="68" selection-start-column="59" selection-end-line="68" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,8 +101,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/GridBagEx1.java" />
-        <option value="$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java" />
         <option value="$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java" />
+        <option value="$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java" />
       </list>
     </option>
   </component>
@@ -138,7 +141,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545615336231" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545621480531" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/GoodStudentVote" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -203,18 +206,18 @@
       <workItem from="1545555181841" duration="1165000" />
       <workItem from="1545571302235" duration="3936000" />
       <workItem from="1545581289605" duration="600000" />
-      <workItem from="1545611274362" duration="3769000" />
+      <workItem from="1545611274362" duration="7346000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25439000" />
+    <option name="totallyTimeSpent" value="29016000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1488" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1944056" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1944056" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -223,7 +226,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4958042" visible="true" weight="0.32454923" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4958042" visible="true" weight="0.32454923" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993007" weight="0.3994452" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -306,23 +309,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GridBagEx1.java" />
-    <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java">
+    <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+        <state relative-caret-position="275">
+          <caret line="68" column="59" selection-start-line="68" selection-start-column="59" selection-end-line="68" selection-end-column="59" />
           <folding>
-            <element signature="e#0#4796#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteForm.java">
+    <entry file="file://$PROJECT_DIR$/GoodStudentVote/src/VoteCounter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="66" column="94" selection-start-line="66" selection-start-column="94" selection-end-line="66" selection-end-column="94" />
+        <state relative-caret-position="221">
+          <caret line="138" column="46" selection-start-line="138" selection-start-column="46" selection-end-line="138" selection-end-column="46" />
           <folding>
+            <element signature="e#0#4796#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#4468#4469#0" expanded="true" />
+            <element signature="e#4522#4523#0" expanded="true" />
           </folding>
         </state>
       </provider>

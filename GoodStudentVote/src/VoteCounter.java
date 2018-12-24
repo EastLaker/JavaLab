@@ -33,7 +33,9 @@ public class VoteCounter extends JFrame implements ActionListener{
     JLabel label0=new JLabel("投票规则",JLabel.CENTER);
     JTextArea rules=new JTextArea(2,50);
     //List candidate=new List(10,false);
+    JButton AddCandidate=new JButton("新建候选人");
     JButton vote=new JButton("投票");
+    JButton DeleteCandidate=new JButton("删除候选人");
 
     JScrollPane Table = new JScrollPane();
     Vector Vcolumns =new Vector();
@@ -79,7 +81,9 @@ public class VoteCounter extends JFrame implements ActionListener{
             public boolean isCellEditable(int row, int column) { return false;}//表格不允许被编辑
         };
         Table.setViewportView(table);
+        Buttons.add(AddCandidate);AddCandidate.addActionListener(this);
         Buttons.add(vote);vote.addActionListener(this);
+        Buttons.add(DeleteCandidate);
         /*for(int i=0;i<20;i++) {
             candidate.put(getRandomString(10,"Name"),0);
         }*/
@@ -87,9 +91,6 @@ public class VoteCounter extends JFrame implements ActionListener{
         pack();
         setSize(this.getPreferredSize());
         setVisible(true);
-
-
-
 
     }
 
@@ -130,6 +131,16 @@ public class VoteCounter extends JFrame implements ActionListener{
                 System.out.println(ioe);
             }
         }
+        else if(e.getSource()==AddCandidate){
+            String name=JOptionPane.showInputDialog("请输入候选人姓名：");
+            Vector temp=new Vector();
+            temp.add(name);temp.add(0);
+            VData.add(temp);
+            model.setDataVector(VData,Vcolumns);
+        }
+        else if(e.getSource()==DeleteCandidate){
+            
+        }
     }
     public static void main(String args[])
     {
@@ -152,3 +163,4 @@ public class VoteCounter extends JFrame implements ActionListener{
         return sb.toString();
     }
 }
+

@@ -61,10 +61,13 @@ public class VoteForm extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e)
     {
         if(e.getSource()==Confirm){
-            int index=comboBox1.getSelectedIndex();
-            //Vector temp=father.VData.get(index);
-            int temp=(int)father.VData.get(index).get(1);
-            father.VData.elementAt(index).remove(1);father.VData.elementAt(index).add(temp+1);
+            int index1=comboBox1.getSelectedIndex();int index2=comboBox2.getSelectedIndex();int index3=comboBox3.getSelectedIndex();
+            int temp1=(int)father.VData.get(index1).get(1);
+            father.VData.elementAt(index1).remove(1);father.VData.elementAt(index1).add(temp1+1);
+            int temp2=(int)father.VData.get(index2).get(1);
+            father.VData.elementAt(index2).remove(1);father.VData.elementAt(index2).add(temp2+1);
+            int temp3=(int)father.VData.get(index3).get(1);
+            father.VData.elementAt(index3).remove(1);father.VData.elementAt(index3).add(temp3+1);
 
             father.model.setDataVector(father.VData,father.Vcolumns);
             this.dispose();

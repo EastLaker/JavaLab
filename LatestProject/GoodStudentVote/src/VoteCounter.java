@@ -52,7 +52,7 @@ public class VoteCounter extends JFrame implements ActionListener{
         parent.setVisible(false);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setFont(new Font("SansSerif", Font.PLAIN, 18));
-        setMenuBar(bar);
+
         setLayout(new BorderLayout());
         add(Rules,"North");
         Rules.setLayout(new BorderLayout());
@@ -100,11 +100,14 @@ public class VoteCounter extends JFrame implements ActionListener{
         setSize(this.getPreferredSize());
         setVisible(true);
         this.setLocationRelativeTo(getOwner());
-        vote.setVisible(false);
-        if(!admin){
-            AddCandidate.setVisible(false);
-            DeleteCandidate.setVisible(false);
-            vote.setVisible(true);
+        AddCandidate.setVisible(false);
+        DeleteCandidate.setVisible(false);
+        if(admin){
+            AddCandidate.setVisible(true);
+            DeleteCandidate.setVisible(true);
+            setMenuBar(bar);
+            vote.setVisible(false);
+
         }
     }
     public void Sort() {

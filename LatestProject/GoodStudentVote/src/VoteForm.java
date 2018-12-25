@@ -51,6 +51,7 @@ public class VoteForm extends JFrame implements ActionListener {
         Exit.addActionListener(this);
         pack();
         setSize(400,150);
+        this.setLocationRelativeTo(getOwner());
         setVisible(true);
     }
 

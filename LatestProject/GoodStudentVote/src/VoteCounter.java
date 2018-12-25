@@ -49,9 +49,8 @@ public class VoteCounter extends JFrame implements ActionListener{
 
     public VoteCounter(Login parent,boolean admin){
         this.parent=parent;
-        this.parent.setVisible(false);
+        parent.setVisible(false);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        
         setFont(new Font("SansSerif", Font.PLAIN, 18));
         setMenuBar(bar);
         setLayout(new BorderLayout());
@@ -90,9 +89,17 @@ public class VoteCounter extends JFrame implements ActionListener{
         Buttons.add(DeleteCandidate);DeleteCandidate.addActionListener(this);
         Buttons.add(invalidvotes);Buttons.add(abstentionvotes);
 
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                parent.setVisible(true);
+                //System.out.println("windowClosing()"); //要处理的事件
+            }
+        });
+
         pack();
         setSize(this.getPreferredSize());
         setVisible(true);
+        this.setLocationRelativeTo(getOwner());
         vote.setVisible(false);
         if(!admin){
             AddCandidate.setVisible(false);

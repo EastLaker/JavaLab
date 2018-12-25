@@ -49,12 +49,12 @@ public class Login extends JFrame implements ActionListener, Serializable {
         //candidate.put("Jack Ma",0);
         //candidate.put("Pony Ma",0);
         //candidate.put("wanghong",0);
-        for(String key:candidate.keySet())
+        /*for(String key:candidate.keySet())
         {
             Vector data=new Vector();
             data.add(key);data.add(candidate.get(key));
             VData.add(data);
-        }
+        }*/
     }
 
     //事件处理

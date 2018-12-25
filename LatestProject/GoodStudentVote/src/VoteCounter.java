@@ -49,7 +49,9 @@ public class VoteCounter extends JFrame implements ActionListener{
 
     public VoteCounter(Login parent,boolean admin){
         this.parent=parent;
+        this.parent.setVisible(false);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        
         setFont(new Font("SansSerif", Font.PLAIN, 18));
         setMenuBar(bar);
         setLayout(new BorderLayout());
@@ -137,11 +139,14 @@ public class VoteCounter extends JFrame implements ActionListener{
                 fd.setVisible(true);
                 //fd.setDirectory(".");
 
-                ObjectInputStream tableIn=new ObjectInputStream(new FileInputStream(fd.getDirectory()+fd.getFile()));
+                ObjectInputStream tableIn=
+                        new ObjectInputStream(new FileInputStream(fd.getDirectory()+fd.getFile()));
                 fd.dispose();
                 Login temp=(Login)tableIn.readObject();
                 parent.VData=temp.VData;
                 VData=parent.VData;
+                candidate=temp.candidate;
+                parent.candidate=temp.candidate;
                 parent.SpoiltVote=temp.SpoiltVote;
                 SpoiltVote=parent.SpoiltVote;
                 tableIn.close();
